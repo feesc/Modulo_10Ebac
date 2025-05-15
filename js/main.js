@@ -37,14 +37,15 @@ $('form').validate({
         },
         cpf: {
             required: true
-        },
+        }
     },
     submitHandler: function (form) {
         alert("Sua requisição foi enviada para análise, parabéns pela aquisição!");
         console.log(form);
+        form.reset();
     },
     invalidHandler: function (form, validator) {
-        let camposIncorretos = validator.numberOfIvalids();
+        let camposIncorretos = validator.numberOfInvalids();
         if (camposIncorretos) {
             alert("Por favor, preencha os campos para prosseguir com a compra!");
         }
